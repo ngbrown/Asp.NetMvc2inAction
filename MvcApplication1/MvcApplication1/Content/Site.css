@@ -342,3 +342,16 @@ div#title
 {
     width: 6em;
 }
+
+/* New styles
+----------------------------------------------------------*/
+fieldset label
+{
+    display: block;
+}
+
+fieldset input
+{
+    display: block;
+    margin-bottom: 5px;
+}

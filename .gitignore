@@ -12,6 +12,7 @@ build/
 _ReSharper.*/
 *.ReSharper
 *.user
+App_Data/
 
 # switch to regexp syntax.
 syntax: regexp
