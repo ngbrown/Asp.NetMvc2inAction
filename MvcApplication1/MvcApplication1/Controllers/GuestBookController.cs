@@ -16,5 +16,18 @@ namespace MvcApplication1.Controllers
             return View();
         }
 
+        //
+        // URL: /GuestBook/Sign
+
+        public ActionResult Sign(string name, string email, string comments)
+        {
+            // do something with the values, such as send an email
+
+            ViewData["name"] = name;
+            ViewData["email"] = email;
+            ViewData["comments"] = comments;
+
+            return this.View("ThankYou");
+        }
     }
 }
