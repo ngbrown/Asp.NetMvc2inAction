@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<MvcApplication1.Models.GuestBookEntry>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     ThankYou
@@ -8,9 +8,8 @@
 
     <h2>Thank You!</h2>
 
-    <p>Thank you for signing the guest book!  You entered:</p>
-    Name: <%= ViewData["name"] %><br />
-    Email: <%= ViewData["email"] %><br />
-    Comments: <i><%= ViewData["comments"] %></i>
+    Thank you for signing our Guest Book.  You entered: <br />
+
+    <%= Html.DisplayForModel() %>
 
 </asp:Content>

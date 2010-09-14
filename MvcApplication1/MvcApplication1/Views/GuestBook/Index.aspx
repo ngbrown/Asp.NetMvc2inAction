@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<MvcApplication1.Models.GuestBookEntry>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -10,23 +10,23 @@
 
     <p>Please sign the Guest Book!</p>
 
-    <form action="/GuestBook/Sign" method="post">
+    <% using (Html.BeginForm()) { %>
     <fieldset>
         <legend>Guest Book</legend>
 
-        <%= Html.Label("Name") %>
-        <%= Html.TextBox("Name") %>
+        <%= Html.LabelFor(model => model.Name) %>
+        <%= Html.TextBoxFor(model => model.Name) %>
 
-        <%= Html.Label("Email") %>
-        <%= Html.TextBox("Email") %>
+        <%= Html.LabelFor(model => model.Email) %>
+        <%= Html.TextBoxFor(model => model.Email) %>
 
-        <%= Html.Label("Comments") %>
-        <%= Html.TextArea("Comments", new { rows=6, cols=30 }) %>
+        <%= Html.LabelFor(model => model.Comments) %>
+        <%= Html.TextAreaFor(model => model.Comments, new { rows=6, cols=30 }) %>
 
         <div>
-            <input type="submit" value="Sign" />
+            <input type="submit" value="Create" />
         </div>
     </fieldset>
-    </form>
+    <% } %>
 
 </asp:Content>

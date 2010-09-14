@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace MvcApplication1.Controllers
 {
+    using Models;
+
     public class GuestBookController : Controller
     {
         //
@@ -13,21 +15,32 @@ namespace MvcApplication1.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var model = new GuestBookEntry();
+            return View(model);
         }
 
         //
-        // URL: /GuestBook/Sign
+        // POST: /GuestBook/
 
-        public ActionResult Sign(string name, string email, string comments)
+        [HttpPost]
+        public ActionResult Index(GuestBookEntry entry)
+        {
+            TempData["entry"] = entry;
+            return RedirectToAction("ThankYou");
+        }
+
+        public ActionResult ThankYou()
         {
             // do something with the values, such as send an email
 
-            ViewData["name"] = name;
-            ViewData["email"] = email;
-            ViewData["comments"] = comments;
+            if (TempData["entry"] == null)
+            {
+                return RedirectToAction("index");
+            }
 
-            return this.View("ThankYou");
+            var model = (GuestBookEntry)TempData["entry"];
+
+            return this.View(model);
         }
     }
 }
