@@ -13,26 +13,29 @@ namespace MvcApplication2.Data
                     new CustomerSummary
                         {
                             Name = "John Smith", 
-                            Active = true,
                             ServiceLevel = "Standard",
                             OrderCount = "42",
-                            MostRecentOrderDate = "02/07/10"
+                            MostRecentOrderDate = "02/07/10",
+                            Input = new CustomerSummary.CustomerSummaryInput 
+                                {Active = true, Number = 1}
                         },
                     new CustomerSummary
                         {
                             Name = "Susan Power", 
-                            Active = false,
                             ServiceLevel = "Standard",
                             OrderCount = "1",
-                            MostRecentOrderDate = "02/02/10"
+                            MostRecentOrderDate = "02/02/10",
+                            Input = new CustomerSummary.CustomerSummaryInput 
+                                {Active = false, Number = 2}
                         },
                     new CustomerSummary
                         {
                             Name = "Jim Doe", 
-                            Active = true,
                             ServiceLevel = "Premier",
                             OrderCount = "7",
-                            MostRecentOrderDate = "02/09/10"
+                            MostRecentOrderDate = "02/09/10",
+                            Input = new CustomerSummary.CustomerSummaryInput 
+                                {Active = true, Number = 3}
                         },
                 };
 

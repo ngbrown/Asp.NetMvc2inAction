@@ -78,6 +78,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\CustomerSummaries\Index.aspx" />
+    <Content Include="Views\CustomerSummaries\Save.aspx" />
     <Content Include="Views\NewCustomer\Index.aspx" />
     <Content Include="Views\NewCustomer\Save.aspx" />
     <Content Include="Web.config" />

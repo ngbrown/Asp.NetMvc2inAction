@@ -24,5 +24,12 @@ namespace MvcApplication2.Controllers
             return View(summaries);
         }
 
+        //
+        // POST: /CustomerSummaries/Save/
+
+        public ViewResult Save(IEnumerable<CustomerSummary.CustomerSummaryInput> input)
+        {
+            return this.View(input);
+        }
     }
 }
